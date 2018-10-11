@@ -25,9 +25,9 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
 
-    # run_test_init()
-    # run_test_rain()
-    # run_test_get_total_rain_amount()
+    run_test_init()
+    run_test_rain()
+    run_test_get_total_rain_amount()
     # run_test_merge_cloud()
 
 
@@ -80,6 +80,7 @@ class Cloud(object):
         # ---------------------------------------------------------------------
         self.capacity = capacity
         self.water = water
+        self.rain = 0
 
     def rain(self, rain_amount):
         """
@@ -124,9 +125,12 @@ class Cloud(object):
           :rtype: int | float
         """
         # ---------------------------------------------------------------------
-        # TODO: 3. Implement and test this method.
+        # DOne: 3. Implement and test this method.
         # ---------------------------------------------------------------------
-
+        rain_amount = self.water - Cloud.rain(self, rain_amount)
+        return rain_amount
+# this code takes a given value of cloud rain and subtracts it from the water that it currently inside it. I ran out of
+# time to finish the whole thing. Here is the start of it
 
     def get_total_rain_amount(self):
         """
@@ -158,9 +162,10 @@ class Cloud(object):
           :rtype: int | float
         """
         # ---------------------------------------------------------------------
-        # TODO: 4. Implement and test this method.
+        # Done: 4. Implement and test this method.
         # ---------------------------------------------------------------------
-
+        total_rain_amount = Cloud.get_total_rain_amount(self) + Cloud.get_total_rain_amount(self)
+        return total_rain_amount
 
     def merge_cloud(self, another_cloud):
         """
@@ -191,9 +196,9 @@ class Cloud(object):
             #   cloud4.water      is 10
         """
         # ---------------------------------------------------------------------
-        # TODO: 5. Implement and test this method.
+        # Done: 5. Implement and test this method.
         # ---------------------------------------------------------------------
-
+        Cloud.merge_cloud(self, another_cloud)
 
 ###############################################################################
 # The TEST functions for the  Cloud  class begin here.
